@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Podium", "Podium\Podium.csproj", "{A55B7134-25D4-47B6-B25E-A3FFA02B82A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodiumWeb", "PodiumWeb\PodiumWeb.csproj", "{A70CCE2D-81F2-44DA-AACE-6C64265FC5B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A55B7134-25D4-47B6-B25E-A3FFA02B82A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A55B7134-25D4-47B6-B25E-A3FFA02B82A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A55B7134-25D4-47B6-B25E-A3FFA02B82A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A55B7134-25D4-47B6-B25E-A3FFA02B82A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A70CCE2D-81F2-44DA-AACE-6C64265FC5B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A70CCE2D-81F2-44DA-AACE-6C64265FC5B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A70CCE2D-81F2-44DA-AACE-6C64265FC5B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A70CCE2D-81F2-44DA-AACE-6C64265FC5B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80F9ABE0-821E-494D-881B-55A33D914B2F}
+	EndGlobalSection
+EndGlobal
