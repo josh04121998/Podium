@@ -49,10 +49,10 @@
         <tbody>
             <tr>
                 <td>@applicant.Id</td>
-                <td>@applicant.firstName</td>
-                <td>@applicant.lastName</td>
-                <td>@applicant.dateOfBirth.ToShortDateString()</td>
-                <td>@applicant.email</td>
+                <td>@applicant.FirstName</td>
+                <td>@applicant.LastName</td>
+                <td>@applicant.DateOfBirth.ToShortDateString()</td>
+                <td>@applicant.Email</td>
             </tr>
         </tbody>
     </table>
@@ -60,7 +60,7 @@
 
 @code {
     private Models.NewApplicant model = new Models.NewApplicant();
-    private ApplicantDto applicant;
+    private PodiumWeb.Dtos.ApplicantDto applicant;
     private bool loading;
 
     private async void CreateApplicant()
@@ -70,7 +70,7 @@
             loading = true;
             using var response = await Http.PostAsJsonAsync("Applicant", model);
             loading = false;
-            applicant = await response.Content.ReadFromJsonAsync<ApplicantDto>();
+            applicant = await response.Content.ReadFromJsonAsync<PodiumWeb.Dtos.ApplicantDto>();
             StateHasChanged();
         }
         catch (Exception ex)
@@ -78,14 +78,5 @@
             loading = false;
             StateHasChanged();
         }
-    }
-
-    public class ApplicantDto
-    {
-        public Guid Id { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public DateTime dateOfBirth { get; set; } = DateTime.Today;
-        public string email { get; set; }
     }
 }

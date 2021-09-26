@@ -57,7 +57,7 @@
 
 @code {
     private Models.MortgageRequirements model = new Models.MortgageRequirements();
-    private MortgageProposal mortgageProposal;
+    private PodiumWeb.Dtos.MortgageProposalDto mortgageProposal;
     private bool loading;
 
     private async void PostMortgageRequirments()
@@ -67,7 +67,7 @@
             loading = true;
             using var response = await Http.PostAsJsonAsync("Mortgage", model);
             loading = false;
-            mortgageProposal = await response.Content.ReadFromJsonAsync<MortgageProposal>();
+            mortgageProposal = await response.Content.ReadFromJsonAsync<PodiumWeb.Dtos.MortgageProposalDto>();
             StateHasChanged();
         }
         catch (Exception ex)
@@ -75,57 +75,5 @@
             loading = false;
             StateHasChanged();
         }
-    }
-
-    public class MortgageProposal
-    {
-        public Guid Id { get; set; }
-
-        public Guid MortgageRequirementId { get; set; }
-        public virtual MortgageRequirement MortgageRequirement { get; set; }
-
-        public IEnumerable<MortgageProposalProduct> Products { get; set; } = new List<MortgageProposalProduct>();
-
-    }
-    public class MortgageRequirement
-    {
-        public Guid Id { get; set; }
-
-        public Guid ApplicantId { get; set; }
-        public virtual ApplicantDto Applicant { get; set; }
-
-        public decimal PropertyValue { get; set; }
-        public decimal DepositAmount { get; set; }
-    }
-    public class ApplicantDto
-    {
-        public Guid Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public string Email { get; set; }
-    }
-    public class MortgageProposalProduct
-    {
-        public Guid Id { get; set; }
-
-        public Guid MortgageProposalId { get; set; }
-        public virtual MortgageProposal MortgageProposal { get; set; }
-
-        public Guid ProductId { get; set; }
-        public virtual Product Product { get; set; }
-    }
-    public class Product
-    {
-        public Guid Id { get; set; }
-        public string Lender { get; set; }
-        public decimal InterestRate { get; set; }
-        public string LoanType { get; set; }
-        public decimal LoanToValue { get; set; }
-    }
-    public enum LoanType
-    {
-        Fixed = 0,
-        Variable = 1
     }
 }
