@@ -1,4 +1,4 @@
-﻿@page "/CreateApplicant"
+﻿@page "/applicant"
 @inject HttpClient Http
 
 <h2>Applicant details</h2>
@@ -7,23 +7,23 @@
     <DataAnnotationsValidator />
     <div class="form-group">
         <label>Firstname</label>
-        <InputText @bind-Value="model.firstname" class="form-control" />
-        <ValidationMessage For="@(() => model.firstname)" />
+        <InputText @bind-Value="model.Firstname" class="form-control" />
+        <ValidationMessage For="@(() => model.Firstname)" />
     </div>
     <div class="form-group">
         <label>LastName</label>
-        <InputText @bind-Value="model.lastname" type="LastName" class="form-control" />
-        <ValidationMessage For="@(() => model.lastname)" />
+        <InputText @bind-Value="model.Lastname" type="LastName" class="form-control" />
+        <ValidationMessage For="@(() => model.Lastname)" />
     </div>
     <div class="form-group">
         <label>DateOfBirth</label>
-        <InputDate @bind-Value="model.dateOfBirth" type="DateOfBirth" class="form-control" />
-        <ValidationMessage For="@(() => model.dateOfBirth)" />
+        <InputDate @bind-Value="model.DateOfBirth" type="DateOfBirth" class="form-control" />
+        <ValidationMessage For="@(() => model.DateOfBirth)" />
     </div>
     <div class="form-group">
         <label>Email</label>
-        <InputText @bind-Value="model.email" type="Email" class="form-control" />
-        <ValidationMessage For="@(() => model.email)" />
+        <InputText @bind-Value="model.Email" type="Email" class="form-control" />
+        <ValidationMessage For="@(() => model.Email)" />
     </div>
     <button disabled="@loading" class="btn btn-primary">
         @if (loading)
@@ -34,11 +34,7 @@
     </button>
 </EditForm>
 
-@if (applicant == null)
-{
-<p><em></em></p>
-}
-else
+@if (applicant != null)
 {
     <table class="table">
         <thead>
@@ -74,7 +70,6 @@ else
             loading = true;
             using var response = await Http.PostAsJsonAsync("Applicant", model);
             loading = false;
-            // convert response data to Article object
             applicant = await response.Content.ReadFromJsonAsync<ApplicantDto>();
             StateHasChanged();
         }

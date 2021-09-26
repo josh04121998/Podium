@@ -10,6 +10,5 @@ namespace Podium.Data.Entities
         public decimal InterestRate { get; set; }
         public LoanType LoanType { get; set; }
         public decimal LoanToValue { get; set; }
-
     }
 }

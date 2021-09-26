@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Podium.Services
 {
-    public class ApplicantService  : IApplicantService
+    public class ApplicantService : IApplicantService
     {
         const int MINIMUM_AGE = 18;
 

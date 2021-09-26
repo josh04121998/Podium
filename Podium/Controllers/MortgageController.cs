@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Podium.Data.Dtos;
 using Podium.Data.Entities;
 using Podium.Services;
+using System;
+using System.Threading.Tasks;
 
 namespace Podium.Controllers
 {

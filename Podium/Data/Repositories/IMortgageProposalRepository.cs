@@ -4,6 +4,6 @@ namespace Podium.Data.Repositories
 {
     public interface IMortgageProposalRepository : IBaseRepository<MortgageProposal>
     {
-        
+
     }
 }

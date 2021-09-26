@@ -2,7 +2,7 @@
 
 namespace Podium.Data.Dtos
 {
-    public class ApplicantDto: NewApplicantDto
+    public class ApplicantDto : NewApplicantDto
     {
         public Guid Id { get; set; }
     }

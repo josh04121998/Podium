@@ -1,12 +1,11 @@
 ﻿using Podium.Data.Entities;
 using Podium.Data.Repositories;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Podium.Services
 {
-    public class ProductService  : IProductService
+    public class ProductService : IProductService
     {
         private readonly IProductRepository _repository;
         public ProductService(IProductRepository repository)

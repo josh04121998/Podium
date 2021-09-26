@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Podium.Data
 {
-    public class MappingProfile: Profile
+    public class MappingProfile : Profile
     {
         public MappingProfile()
         {

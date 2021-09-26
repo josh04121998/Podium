@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Podium.Data.Dtos;
 using Podium.Data.Entities;
 using Podium.Services;
+using System;
+using System.Threading.Tasks;
 
 namespace Podium.Controllers
 {
@@ -19,7 +18,7 @@ namespace Podium.Controllers
         private readonly IMapper _mapper;
 
 
-        public ApplicantController(ILogger<ApplicantController> logger, 
+        public ApplicantController(ILogger<ApplicantController> logger,
             IApplicantService applicantService,
             IMapper mapper)
         {
@@ -39,7 +38,7 @@ namespace Podium.Controllers
         [HttpPost]
         public async Task<ActionResult<Applicant>> PostApplicant(NewApplicantDto newApplicantDto)
         {
-            var applicantDto = new ApplicantDto 
+            var applicantDto = new ApplicantDto
             {
                 Id = new Guid(),
                 FirstName = newApplicantDto.FirstName,

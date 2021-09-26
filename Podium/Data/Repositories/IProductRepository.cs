@@ -4,6 +4,6 @@ namespace Podium.Data.Repositories
 {
     public interface IProductRepository : IBaseRepository<Product>
     {
-        
+
     }
 }

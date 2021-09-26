@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Podium.Services
 {
-    public class MortgageService  : IMortgageService
+    public class MortgageService : IMortgageService
     {
         private readonly IMortgageProposalRepository _proposalRepository;
         private readonly IMortgageRequirementRepository _requirementRepository;
@@ -48,7 +48,7 @@ namespace Podium.Services
             };
 
             await _proposalRepository.CreateAsync(proposal);
-            
+
             var products = await _productService.GetAll();
             var proposalProducts = new List<MortgageProposalProduct>();
 

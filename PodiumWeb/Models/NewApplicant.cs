@@ -4,13 +4,13 @@ namespace PodiumWeb.Models
 {
     public class NewApplicant
     {
-            [Required]
-            public string firstname { get; set; }
-            [Required]
-            public string lastname { get; set; }
-            [Required]
-            public DateTime dateOfBirth { get; set; } = DateTime.Today;
-            [Required]
-            public string email { get; set; }
+        [Required]
+        public string Firstname { get; set; }
+        [Required]
+        public string Lastname { get; set; }
+        [Required]
+        public DateTime DateOfBirth { get; set; } = DateTime.Today;
+        [Required]
+        public string Email { get; set; }
     }
 }
